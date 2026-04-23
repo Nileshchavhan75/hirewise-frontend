@@ -1,0 +1,159 @@
+.hr-trends-page {
+  min-height: 100vh;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  padding-top: 80px;
+}
+
+.trends-hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.trends-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #9C89B8, #4A90E2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trends-hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.trends-grid-section {
+  padding: 20px 5%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.trend-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trend-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.trend-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.trend-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.trend-card:hover .trend-image img {
+  transform: scale(1.05);
+}
+
+.trend-category {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.trend-content {
+  padding: 20px;
+}
+
+.trend-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.trend-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.trend-excerpt {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.trend-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trend-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trend-author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.trend-author span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.trend-stats {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.load-more {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.load-more-btn {
+  padding: 12px 30px;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.load-more-btn:hover {
+  border-color: #4158D0;
+  color: #4158D0;
+}

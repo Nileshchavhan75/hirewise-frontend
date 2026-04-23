@@ -1,0 +1,805 @@
+/* src/pages/services/ServicePage.css */
+
+/* ============================================
+   GLOBAL & BASE STYLES
+   ============================================ */
+.service-detail-page {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ============================================
+   HERO SECTION (with Particles & Floating Orb)
+   ============================================ */
+.service-hero {
+  position: relative;
+  padding: 120px 0 100px;
+  color: white;
+  overflow: hidden;
+  transition: transform 0.1s ease-out;
+}
+
+/* Floating particles background */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.service-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.service-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+.glow-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.service-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  max-width: 90%;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Hero Visual – Floating Orb & Rings */
+.hero-visual-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-orb {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: floatOrb 6s ease-in-out infinite;
+  box-shadow: 0 0 50px rgba(255,255,255,0.3);
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+.orb-icon {
+  font-size: 5rem;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.orb-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  top: 0;
+  left: 0;
+  animation: spinRing 10s linear infinite;
+}
+
+.orb-ring-2 {
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: spinRingReverse 8s linear infinite;
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinRingReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.float-particle {
+  position: absolute;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  animation: floatParticleAnim 4s ease-in-out infinite;
+}
+
+.float-particle:nth-child(1) { top: 10%; left: 85%; animation-delay: 0s; }
+.float-particle:nth-child(2) { top: 20%; left: 5%; animation-delay: 0.5s; }
+.float-particle:nth-child(3) { top: 70%; left: 90%; animation-delay: 1s; }
+.float-particle:nth-child(4) { top: 80%; left: 10%; animation-delay: 1.5s; }
+.float-particle:nth-child(5) { top: 40%; left: 95%; animation-delay: 2s; }
+.float-particle:nth-child(6) { top: 60%; left: 2%; animation-delay: 2.5s; }
+.float-particle:nth-child(7) { top: 15%; left: 15%; animation-delay: 3s; }
+.float-particle:nth-child(8) { top: 85%; left: 75%; animation-delay: 3.5s; }
+.float-particle:nth-child(9) { top: 30%; left: 80%; animation-delay: 0.2s; }
+.float-particle:nth-child(10) { top: 50%; left: 20%; animation-delay: 1.2s; }
+.float-particle:nth-child(11) { top: 75%; left: 45%; animation-delay: 2.8s; }
+.float-particle:nth-child(12) { top: 5%; left: 50%; animation-delay: 1.8s; }
+
+@keyframes floatParticleAnim {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-15px) rotate(180deg); opacity: 1; }
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ============================================
+   METRICS SECTION (3D Cards)
+   ============================================ */
+.metrics-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.metrics-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.metric-card-3d {
+  flex: 1;
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 28px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px -8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.metric-card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+}
+
+.metric-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+.metric-card-3d:hover .metric-icon {
+  transform: scale(1.1);
+}
+
+.metric-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ============================================
+   FEATURES SECTION (Glow Cards)
+   ============================================ */
+.features-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 3px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card-glow {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 24px;
+  transition: all 0.4s ease;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.feature-card-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+  border-color: transparent;
+}
+
+.feature-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  transition: left 0.5s ease;
+}
+
+.feature-card-glow:hover .feature-glow {
+  left: 0;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.feature-card-glow:hover .feature-icon {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.feature-card-glow h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   PROCESS TIMELINE
+   ============================================ */
+.process-section {
+  padding: 80px 0;
+}
+
+.process-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.timeline-step.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 15px 25px -8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.timeline-step:hover .step-icon {
+  transform: scale(1.05);
+}
+
+.step-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-line {
+  position: absolute;
+  left: 35px;
+  top: 70px;
+  width: 3px;
+  height: calc(100% - 30px);
+  background: linear-gradient(to bottom, #3b82f6, #a855f7);
+  z-index: -1;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item-glow {
+  background: #f1f5f9;
+  border-radius: 24px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.faq-item-glow:hover {
+  background: #eef2ff;
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-question i {
+  font-size: 1.4rem;
+  transition: transform 0.3s;
+}
+
+.faq-item-glow:hover .faq-question i {
+  transform: rotate(15deg);
+}
+
+.faq-question h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.faq-item-glow p {
+  color: #475569;
+  margin-left: 2rem;
+}
+
+/* ============================================
+   CTA SECTION (Pulsing Button)
+   ============================================ */
+.service-cta {
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotateBg 20s linear infinite;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.service-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button-pulse {
+  background: white;
+  color: #1e293b;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+.cta-button-pulse:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   UPCOMING BANNER
+   ============================================ */
+.upcoming-banner {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  text-align: center;
+}
+
+.upcoming-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.upcoming-content i {
+  font-size: 3rem;
+  color: #d97706;
+  margin-bottom: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.upcoming-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.upcoming-content p {
+  margin-bottom: 2rem;
+}
+
+.btn-upcoming {
+  background: #d97706;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-upcoming:hover {
+  background: #b45309;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   DARK THEME SUPPORT
+   ============================================ */
+.service-detail-page.dark .metrics-section {
+  background: #1e293b;
+}
+
+.service-detail-page.dark .metric-card-3d {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+.service-detail-page.dark .metric-number {
+  color: #f1f5f9;
+}
+
+.service-detail-page.dark .metric-label {
+  color: #cbd5e1;
+}
+
+.service-detail-page.dark .features-section {
+  background: #0f172a;
+}
+
+.service-detail-page.dark .feature-card-glow {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.service-detail-page.dark .feature-card-glow h3 {
+  color: #f1f5f9;
+}
+
+.service-detail-page.dark .section-header h2 {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.service-detail-page.dark .faq-section {
+  background: #0f172a;
+}
+
+.service-detail-page.dark .faq-item-glow {
+  background: #1e293b;
+}
+
+.service-detail-page.dark .faq-question h3 {
+  color: #f1f5f9;
+}
+
+.service-detail-page.dark .faq-item-glow p {
+  color: #cbd5e1;
+}
+
+.service-detail-page.dark .process-section {
+  background: #0f172a;
+}
+
+.service-detail-page.dark .step-content h4 {
+  color: #f1f5f9;
+}
+
+.service-detail-page.dark .step-content p {
+  color: #cbd5e1;
+}
+
+/* ============================================
+   ERROR & LOADING STATES
+   ============================================ */
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error-page i {
+  font-size: 4rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 100px;
+  font-size: 1.5rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 992px) {
+  .hero-grid {
+    gap: 2rem;
+  }
+  .glow-text {
+    font-size: 2.8rem;
+  }
+  .floating-orb {
+    width: 220px;
+    height: 220px;
+  }
+  .orb-icon {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .service-hero p {
+    max-width: 100%;
+  }
+  .glow-text {
+    font-size: 2.2rem;
+  }
+  .metrics-grid {
+    flex-direction: column;
+  }
+  .timeline-step {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .step-line {
+    display: none;
+  }
+  .feature-card-glow {
+    padding: 1.5rem;
+  }
+  .service-cta h2 {
+    font-size: 1.8rem;
+  }
+  .floating-orb {
+    width: 180px;
+    height: 180px;
+  }
+  .orb-icon {
+    font-size: 2.8rem;
+  }
+  .float-particle {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-hero {
+    padding: 80px 0 60px;
+  }
+  .glow-text {
+    font-size: 1.8rem;
+  }
+  .service-badge {
+    font-size: 0.8rem;
+  }
+  .metric-number {
+    font-size: 2rem;
+  }
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  .floating-orb {
+    width: 150px;
+    height: 150px;
+  }
+}

@@ -1,0 +1,181 @@
+/* International Jobs Page Styles */
+.international-jobs-page {
+    min-height: 100vh;
+    padding: 100px 5% 60px;
+    background: var(--primary-bg);
+}
+
+.international-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.international-header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.international-header p {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.country-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px var(--shadow-color);
+}
+
+.country-flag {
+    font-size: 64px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.country-card:hover .country-flag {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.country-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.country-jobs {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-500);
+    margin-bottom: 10px;
+}
+
+.country-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.country-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.country-link:hover {
+    background: var(--gradient-primary);
+    color: white;
+    gap: 12px;
+}
+
+/* Visa Support Section */
+.visa-support {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.visa-support h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.visa-support p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.support-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.support-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px var(--shadow-color);
+}
+
+.support-item i {
+    font-size: 36px;
+    color: #4158D0;
+    margin-bottom: 15px;
+}
+
+.support-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.support-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .countries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .international-header h1 {
+        font-size: 32px;
+    }
+
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}

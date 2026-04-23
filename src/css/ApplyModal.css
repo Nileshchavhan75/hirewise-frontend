@@ -1,0 +1,573 @@
+/* ============================================
+   APPLY MODAL CSS - COMPLETE WITH ALL STYLES
+   ============================================ */
+
+/* Modal Overlay */
+.apply-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal Content */
+.apply-modal-content {
+    background: var(--secondary-bg, #ffffff);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 30px 60px var(--shadow-color, rgba(0, 0, 0, 0.3));
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode adjustments */
+.dark .apply-modal-content {
+    background: #1e1e2f;
+    border-color: #2d2d44;
+}
+
+/* Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.1));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+    color: var(--text-primary, #ffffff);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: var(--accent-error, #dc3545);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Modal Header */
+.modal-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+}
+
+.modal-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.job-title-preview {
+    font-size: 16px;
+    color: var(--text-secondary, #b0b0c0);
+}
+
+.job-title-preview strong {
+    color: var(--text-primary, #ffffff);
+    font-weight: 600;
+}
+
+/* Form Styles */
+.apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.required {
+    color: var(--accent-error, #dc3545);
+    font-size: 18px;
+}
+
+/* Textarea */
+.form-group textarea {
+    padding: 15px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.05));
+    color: var(--text-primary, #ffffff);
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-500, #4158D0);
+    box-shadow: 0 0 0 4px rgba(65, 88, 208, 0.1);
+}
+
+.form-group textarea.error {
+    border-color: var(--accent-error, #dc3545);
+}
+
+/* Input Group */
+.url-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.url-input-group .input-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--primary-500, #4158D0);
+    font-size: 16px;
+}
+
+.url-input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.05));
+    color: var(--text-primary, #ffffff);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.url-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-500, #4158D0);
+    box-shadow: 0 0 0 4px rgba(65, 88, 208, 0.1);
+}
+
+.url-input-group input.error {
+    border-color: var(--accent-error, #dc3545);
+}
+
+/* Hint Text */
+.hint {
+    font-size: 13px;
+    color: var(--text-secondary, #b0b0c0);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.hint i {
+    color: var(--primary-500, #4158D0);
+    font-size: 12px;
+}
+
+/* Error Message */
+.error-message {
+    color: var(--accent-error, #dc3545);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.error-message i {
+    font-size: 14px;
+}
+
+/* ============================================
+   FILE UPLOAD STYLES - NEW ADDITIONS
+   ============================================ */
+
+/* File Info Container */
+.file-info {
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+}
+
+/* File Details */
+.file-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.file-details i {
+    font-size: 24px;
+    color: var(--primary-500, #4158D0);
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    word-break: break-all;
+}
+
+.file-size {
+    color: var(--text-secondary, #b0b0c0);
+    font-size: 13px;
+}
+
+/* Upload Progress Bar */
+.upload-progress {
+    position: relative;
+    height: 6px;
+    background: var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 3px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    background: var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 12px;
+    color: var(--text-secondary, #b0b0c0);
+}
+
+/* File Action Buttons */
+.file-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.upload-file-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.upload-file-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(65, 88, 208, 0.3);
+}
+
+.upload-file-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.remove-file-btn {
+    padding: 10px 20px;
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    color: var(--text-primary, #ffffff);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.remove-file-btn:hover {
+    background: var(--accent-error, #dc3545);
+    color: white;
+    border-color: transparent;
+}
+
+.remove-file-btn.small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Uploaded File Info */
+.uploaded-file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    border-radius: 12px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.uploaded-file-info i {
+    color: #28a745;
+    font-size: 20px;
+}
+
+.uploaded-file-info span {
+    color: var(--text-primary, #ffffff);
+    flex: 1;
+}
+
+.view-file-link {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-file-link:hover {
+    text-decoration: underline;
+}
+
+/* OR Divider */
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.or-divider span {
+    background: var(--secondary-bg, #1e1e2f);
+    padding: 0 15px;
+    color: var(--text-secondary, #b0b0c0);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.or-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color, rgba(255, 255, 255, 0.1));
+    z-index: 0;
+}
+
+/* Upload Button */
+.upload-btn {
+    padding: 12px 30px;
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.1));
+    border: 2px dashed var(--border-color, rgba(255, 255, 255, 0.2));
+    border-radius: 50px;
+    color: var(--text-primary, #ffffff);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-btn:hover {
+    border-color: var(--primary-500, #4158D0);
+    background: var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Terms Group */
+.terms-group {
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-secondary, #b0b0c0);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--primary-500, #4158D0);
+}
+
+.checkbox-label a {
+    color: var(--primary-500, #4158D0);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+}
+
+.cancel-btn,
+.submit-btn {
+    flex: 1;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cancel-btn {
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.1));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+    color: var(--text-primary, #ffffff);
+}
+
+.cancel-btn:hover:not(:disabled) {
+    background: var(--accent-error, #dc3545);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+.submit-btn {
+    background: var(--gradient-primary, linear-gradient(135deg, #4158D0, #C850C0));
+    border: none;
+    color: white;
+    box-shadow: 0 10px 20px rgba(65, 88, 208, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px rgba(65, 88, 208, 0.4);
+}
+
+.submit-btn:disabled,
+.cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Dark mode specific */
+.dark .uploaded-file-info {
+    background: rgba(40, 167, 69, 0.2);
+}
+
+.dark .or-divider span {
+    background: #1e1e2f;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .apply-modal-content {
+        padding: 30px 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .checkbox-label {
+        font-size: 13px;
+    }
+    
+    .file-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .apply-modal-content {
+        padding: 25px 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 22px;
+    }
+
+    .upload-btn {
+        width: 100%;
+    }
+    
+    .file-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

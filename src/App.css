@@ -1,0 +1,190 @@
+/* App specific styles */
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Any additional app-level styles can go here */
+/* Services Section Styles */
+.services-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.services-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-section .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.service-card-link {
+  text-decoration: none;
+  display: block;
+  perspective: 1500px;
+}
+
+.service-flip-card {
+  background-color: transparent;
+  height: 320px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.service-flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.flip-card-front h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.flip-card-front p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.card-hover-trigger {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.flip-card-front:hover .card-hover-trigger {
+  opacity: 1;
+}
+
+.flip-card-back {
+  background: white;
+  color: #1e293b;
+  transform: rotateY(180deg);
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+}
+
+.back-content {
+  width: 100%;
+  text-align: left;
+}
+
+.back-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.back-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.back-content li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.back-content li i {
+  font-size: 0.8rem;
+  width: 18px;
+}
+
+.back-cta {
+  text-align: center;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-top: auto;
+  transition: transform 0.3s;
+}
+
+.service-flip-card:hover .back-cta {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-flip-card {
+    height: 300px;
+  }
+}
+
+/* Scroll animation */
+.service-flip-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-flip-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Hide extension-added elements if they have IDs like #gb or similar */
+#gb, [data-ogsb], .gb_1, .gb_2 {
+  display: none !important;
+}

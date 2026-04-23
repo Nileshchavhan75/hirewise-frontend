@@ -1,0 +1,71 @@
+/* Browse Jobs Page Styles */
+.browse-jobs-page {
+    min-height: 100vh;
+    padding: 100px 5% 60px;
+    background: var(--primary-bg);
+}
+
+.browse-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.browse-header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.browse-header p {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+/* Coming Soon Style */
+.coming-soon {
+    text-align: center;
+    padding: 60px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.coming-soon i {
+    font-size: 64px;
+    color: #4158D0;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.coming-soon h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.coming-soon p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.coming-soon .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.coming-soon .back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px rgba(65, 88, 208, 0.4);
+}

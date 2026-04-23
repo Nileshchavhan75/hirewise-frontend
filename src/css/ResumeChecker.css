@@ -1,0 +1,404 @@
+/* Resume Checker Styles - Both Modal and Page */
+
+/* Modal Overlay */
+.resume-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.resume-modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-close-btn:hover {
+    background: var(--accent-error);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.resume-modal-header {
+    padding: 25px 30px 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resume-modal-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.resume-modal-header h2 i {
+    color: var(--primary-500);
+    margin-right: 10px;
+}
+
+.resume-modal-header p {
+    color: var(--text-secondary);
+}
+
+.resume-modal-body {
+    padding: 25px 30px;
+}
+
+/* File Upload Area */
+.file-upload-area {
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+    background: var(--gradient-glass);
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-upload-label:hover {
+    border-color: var(--primary-500);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.file-upload-label i {
+    font-size: 48px;
+    color: var(--primary-500);
+}
+
+.file-upload-label span {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.file-upload-label small {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Check Button */
+.check-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 20px 0;
+}
+
+.check-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.check-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.score-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.score-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.score-circle svg circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.score-circle svg circle:first-child {
+    stroke: var(--border-color);
+}
+
+.score-circle svg circle:last-child {
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.score-value {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.score-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Suggestion Box */
+.suggestion-box {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.suggestion-box i {
+    font-size: 24px;
+    color: var(--primary-500);
+}
+
+.suggestion-box p {
+    flex: 1;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Keywords */
+.matched-keywords h4,
+.keywords-section h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.keyword-tag,
+.keyword-badge {
+    padding: 6px 14px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--primary-500);
+    border-radius: 30px;
+    font-size: 13px;
+    color: var(--primary-500);
+}
+
+/* Error Message */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    border-radius: 12px;
+    color: #e74c3c;
+    margin: 15px 0;
+}
+
+/* Modal Footer */
+.resume-modal-footer {
+    padding: 15px 30px 25px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn {
+    padding: 10px 30px;
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Standalone Page Styles */
+.resume-checker-page {
+    min-height: 100vh;
+    padding: 100px 5% 60px;
+    background: var(--primary-bg);
+}
+
+.checker-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.checker-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.checker-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.checker-header p {
+    color: var(--text-secondary);
+}
+
+.checker-form .form-group {
+    margin-bottom: 25px;
+}
+
+.checker-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.checker-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--gradient-glass);
+    color: var(--text-primary);
+    font-size: 15px;
+}
+
+.file-input-wrapper input {
+    display: none;
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: var(--gradient-glass);
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-label:hover {
+    border-color: var(--primary-500);
+}
+
+.checker-form small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.results-card {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resume-modal-content {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .resume-modal-header h2 {
+        font-size: 20px;
+    }
+
+    .score-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .checker-container {
+        padding: 25px;
+    }
+
+    .checker-header h1 {
+        font-size: 28px;
+    }
+}
