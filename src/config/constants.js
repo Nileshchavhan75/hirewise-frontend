@@ -1,7 +1,8 @@
 console.log('ENV VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL);
 console.log('All env vars:', import.meta.env);
 // API Base URL
-export const API_BASE_URL = 'https://web-production-44bcb.up.railway.app/api';
+// API Base URL - reads from .env file, falls back to localhost
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
 
 // API Endpoints
 export const API_ENDPOINTS = {
