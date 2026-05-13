@@ -45,7 +45,7 @@ const About = () => {
 
   const leadership = {
     name: 'Sneha Pathak',
-    role: 'Co-Founder',
+    role: 'Co-Founder ',
     location: 'Pune',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     bio: 'With over 15 years of experience in recruitment and HR consulting, Sneha has built HireWise into a trusted name in talent acquisition.',
